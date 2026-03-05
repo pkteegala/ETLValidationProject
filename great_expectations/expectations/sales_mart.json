@@ -1,0 +1,78 @@
+{
+  "name": "sales_mart",
+  "expectations": [
+    {
+      "type": "expect_table_columns_to_match_set",
+      "kwargs": {
+        "column_set": ["product_id", "product_description", "category","size","available_qty","warehouse","total_qty_sold","actual_revenue","total_revenue"]},
+        "meta": {"description": "Column Tables of sales_mart should be as above"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "actual_revenue"},
+       "meta": {"description": "The actual_revenue column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "product_id"},
+       "meta": {"description": "The Product_id column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "product_description"},
+      "meta": {"description": "The product_description column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "category"},
+      "meta": {"description": "The category column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "size"},
+      "meta": {"description": "The size column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "available_qty"},
+      "meta": {"description": "The available_qty column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "category"},
+       "meta": {"description": "The category column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_be_of_type",
+      "kwargs": { "column": "total_qty_sold", "type_": "INTEGER"},
+      "meta": {"description": "The total_qty_sold datatype should be an integer"}
+    },
+    {
+      "type": "expect_column_values_to_be_of_type",
+      "kwargs": { "column": "total_revenue", "type_": "REAL"},
+      "meta": {"description": "The total_revenue datatype should be an integer"}
+    },
+    {
+      "type": "expect_column_values_to_be_of_type",
+      "kwargs": { "column": "available_qty", "type_": "INTEGER"},
+      "meta": {"description": "The available_qty datatype should be an integer"}
+    },
+    {
+      "type": "expect_column_values_to_be_between",
+      "kwargs": {"column": "total_revenue","min_value": 0},
+      "meta": {"description": "The total_revenue should not be less than 0 "}
+    },
+    {
+      "type": "expect_column_values_to_be_between",
+      "kwargs": {"column": "total_qty_sold","min_value": 1},
+      "meta": {"description": "The total_qty_sold should not be less than 1 "}
+    },
+    {
+      "type": "expect_column_pair_values_to_be_equal",
+      "kwargs": {
+      "column_A": "actual_revenue",
+      "column_B": "total_revenue" },
+      "meta": {"description": "Validate qty * unit_price revenue equals total revenue"}
+    }
+  ]
+}

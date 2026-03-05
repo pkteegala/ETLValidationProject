@@ -1,0 +1,27 @@
+[project]
+name = "ETLValidationProject"
+version = "0.1.0"
+description = "ETL validation project using dbt, Great Expectations, Behave, and SQLite"
+authors = [
+    { name = "Praneeth Teegala", email = "" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+keywords = ["ETL", "Data Validation", "dbt", "Great Expectations", "SQLite", "Behave"]
+
+[project.dependencies]
+python-dateutil = "*"
+great-expectations = "*"
+dbt-core = "==1.5.1"
+dbt-postgres = "==1.5.1"
+dbt-sqlite = "==1.5.0"
+behave = ">=1.3.3,<2.0.0"
+behave-html-formatter = "*"
+cffi = ">=1.9,<2.0.0"
+cryptography = "<46"
+setuptools = "==65.5.0"
+
+[build-system]
+requires = ["setuptools>=65.5.0", "wheel"]
+build-backend = "setuptools.build_meta"

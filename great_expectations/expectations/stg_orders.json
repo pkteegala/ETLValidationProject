@@ -1,0 +1,63 @@
+{
+  "name": "stg_orders",
+  "expectations": [
+    {
+      "type": "expect_table_columns_to_match_set",
+      "kwargs": {
+        "column_set": ["order_id", "product_id", "size", "qty", "unit_price","amount", "order_status"]},
+      "meta": {"description": "Column Tables of stg_Orders should be as above"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "order_id"},
+      "meta": {"description": "The order_id column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "Product_id"},
+      "meta": {"description": "The Product_id column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "Size"},
+      "meta": {"description": "The Size column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "unit_price"},
+      "meta": {"description": "The unit_price column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "Amount"},
+      "meta": {"description": "The Amount column values should not have any null"}
+    },
+        {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "Order_status"},
+      "meta": {"description": "The Order_status column values should not have any null"}
+    },
+    {
+      "type": "expect_column_values_to_be_between",
+      "kwargs": {"column": "Qty", "min_value": 0, "strict_min": "true"},
+      "meta": {"description": "Qty is greater than 1"}
+    },
+    {
+      "type":"expect_column_values_to_be_between",
+      "kwargs": {"column": "Amount", "min_value": 1},
+      "meta": {"description": "The minimum Amount Value should be 1"}
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+      "column":  "Order_status",
+      "value_set": ["Delivered", "Picked","Invoiced","Cancelled","Return"] },
+      "meta": {"description": "Order_status should have all the valid status" }
+    },
+    {
+      "type": "expect_column_values_to_be_unique",
+      "kwargs": {"column": "order_id"},
+      "meta": {"description": "order_id should be uniquie"}
+    }  
+  ]
+}

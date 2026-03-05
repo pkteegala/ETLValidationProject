@@ -1,0 +1,41 @@
+{
+  "name": "stg_products",
+  "expectations": [
+    {
+      "type": "expect_table_columns_to_match_set",
+      "kwargs": {
+        "column_set": ["product_id", "product_description", "category","size","available_qty","warehouse"]},
+         "meta": {"description": "The stg_products should have all the above columns"}
+    },
+    {
+      "type":"expect_column_values_to_not_be_null",
+      "kwargs": {"column": "product_id"},
+      "meta": {"description": "The product_id column values should not have any null"}
+    },
+    {
+      "type":"expect_column_values_to_not_be_null",
+      "kwargs": {"column": "product_description"},
+      "meta": {"description": "The product_description column values should not have any null"}
+    },
+    {
+      "type":"expect_column_values_to_not_be_null",
+      "kwargs": {"column": "category"},
+      "meta": {"description": "The category column values should not have any null"}
+    },
+    {
+      "type":"expect_column_values_to_not_be_null",
+      "kwargs": {"column": "size"},
+      "meta": {"description": "The Size  column values should not have any null"}
+    },
+    {
+      "type":"expect_column_values_to_not_be_null",
+      "kwargs": {"column": "available_qty"},
+      "meta": {"description": "The available_qty column values should not have any null"}
+    },
+    {
+      "type":"expect_column_values_to_not_be_null",
+      "kwargs": {"column": "warehouse"},
+      "meta": {"description": "The warehouse column values should not have any null"}
+    }
+  ]
+}
